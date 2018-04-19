@@ -10,7 +10,7 @@
          });
 
          // prevents form from submitting and sends a message to server
-         $('form').submit(function(){
+         $('#send').submit(function(){
             var user = $('#username').val();
             var message = $('#message').val();
             socket.emit('messages', message, user);

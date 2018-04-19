@@ -2,13 +2,6 @@ var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'joeshans21.mysql.pythonanywhere-services.com',
-  user     : 'joeshans21',
-  password : 'ipodgenius',
-  database : 'joeshans21$nodechat'
-});
 
 
 app.get('/', function(req, res, next) {

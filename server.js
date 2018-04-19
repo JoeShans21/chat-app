@@ -17,9 +17,9 @@ io.on('connection', function(client) {
 		console.log(data);
 	});
 
-	client.on('messages', function(data){
-		client.emit('thread', data);
-		client.broadcast.emit('thread', data);
+	client.on('messages', function(data, user){
+		client.emit('thread', data, user);
+		client.broadcast.emit('thread', data, user);
 	});
 });
 

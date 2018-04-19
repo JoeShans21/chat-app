@@ -17,3 +17,6 @@
             $('input[type=text].message').val('');
             return false;
          });
+         function reset() {
+            document.getElementById('message').value="";
+         }

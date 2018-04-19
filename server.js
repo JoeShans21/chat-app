@@ -19,7 +19,7 @@ app.use(express.static('public'));
 
 
 io.on('connection', function(client) {
-	connection.query('SELECT * FROM messages WHERE id=1', function(err, rows){
+	connection.query('SELECT * FROM messages', function(err, rows){
 		console.log("here are dah rows");
 		console.log(rows[0]);
 	});

@@ -21,7 +21,11 @@
             return false;
          });
          function showModal(){
-            swal("<p>grdrfgdfg</p>");
+            swal({
+              title: "<i>Title</i>", 
+              html: "Testno  sporocilo za objekt: <b>test</b>",  
+              confirmButtonText: "V <u>redu</u>", 
+            });
          }
          function reset() {
             document.getElementById('message').value="";

@@ -21,10 +21,8 @@ app.use(express.static('public'));
 io.on('connection', function(client) {
 	connection.query('SELECT * FROM messages', function(err, rows){
 		for (let value of rows){
-			console.log(value);
+			client.emit('thread', value.content, value.author);
 		}
-		console.log("here are dah rows");
-		console.log(rows[1]);
 	});
 	console.log('Client connected...');
 	client.on('join', function(data) {

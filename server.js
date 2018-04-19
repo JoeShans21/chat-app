@@ -21,7 +21,8 @@ app.use(express.static('public'));
 io.on('connection', function(client) {
 	connection.query('SELECT * FROM messages', function(err, rows){
 		for (let value of rows){
-			console.log(value)
+			console.log(value);
+		}
 		console.log("here are dah rows");
 		console.log(rows[1]);
 	});

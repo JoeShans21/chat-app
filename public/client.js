@@ -5,14 +5,15 @@
          });
 
          // listener for 'thread' event, which updates messages
-         socket.on('thread', function(data) {
-            $('#thread').append('<li>' + data + '</li>');
+         socket.on('thread', function(data, user) {
+            $('#thread').append('<li>' + data + user + '</li>');
          });
 
          // prevents form from submitting and sends a message to server
          $('form').submit(function(){
+            var user = $('#username').val();
             var message = $('#message').val();
-            socket.emit('messages', message);
+            socket.emit('messages', message, user);
             this.reset();
             return false;
          });

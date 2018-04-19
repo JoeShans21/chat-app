@@ -23,8 +23,8 @@
          function showModal(){
             swal({
               title: "<i>Title</i>", 
-              html: "Testno  sporocilo za objekt: <b>test</b>",  
-              confirmButtonText: "V <u>redu</u>", 
+              content: "Testno  sporocilo za objekt: <b>test</b>",  
+              button: "V <u>redu</u>", 
             });
          }
          function reset() {

@@ -20,11 +20,6 @@ app.use(express.static('public'));
 
 io.on('connection', function(client) {
 	console.log('Client connected...');
-  connection.connect();
-  connection.query('SELECT content WHERE id=1', function (content) {
-    console.log(content)
-  });
-  connection.end();
 	client.on('join', function(data) {
 		console.log(data);
 	});

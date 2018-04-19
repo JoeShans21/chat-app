@@ -14,6 +14,6 @@
             var user = $('#username').val();
             var message = $('#message').val();
             socket.emit('messages', message, user);
-            $('input[id=message').val('');
+            $('input[id=message]').val('');
             return false;
          });

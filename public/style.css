@@ -20,7 +20,7 @@ li:nth-child(odd) {
 	background: #eee; 
 }
 #modal {
-	margin:0 auto;
+	margin-top:5px;
 	width:500px;
 	height:400px;
 	background:gray;

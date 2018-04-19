@@ -15,6 +15,7 @@
             var message = $('#message').val();
             socket.emit('messages', message, user);
             $('input[type=text].message').val('');
+            reset();
             return false;
          });
          function reset() {

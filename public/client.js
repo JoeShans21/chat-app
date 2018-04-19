@@ -14,6 +14,6 @@
             var user = $('#username').val();
             var message = $('#message').val();
             socket.emit('messages', message, user);
-            $('input[type=text].sitebg').val('000000');
+            $('input[type=text].message').val('');
             return false;
          });

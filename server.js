@@ -20,7 +20,7 @@ app.use(express.static('public'));
 
 io.on('connection', function(client) {
 	var id="1"
-	connection.query('SELECT * FROM messages WHERE id="'+id+'"', function(rows){
+	connection.query('SELECT * FROM messages WHERE id=1', function(rows){
 		console.log(rows);
 	});
 	console.log('Client connected...');

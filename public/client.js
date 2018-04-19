@@ -21,7 +21,7 @@
             return false;
          });
          function showModal(){
-                  $('#usermodal').modal('show');
+            document.getElementById("usermodal").style.display="inline";
          }
          function reset() {
             document.getElementById('message').value="";

@@ -21,7 +21,7 @@
             return false;
          });
          function showModal(){
-            swal("Hello")
+            swal("<p>grdrfgdfg</p>");
          }
          function reset() {
             document.getElementById('message').value="";

@@ -8,8 +8,8 @@
          socket.on('thread', function(data, user) {
             $('#thread').prepend('<li>' + data + '<br>' + user + '</li><br>');
          });
-         socket.on('newuser', function(user) {
-            $('#thread').prepend('<li>' + user + ' joined the server<br>Server</li><br>');
+         socket.on('newuser', function() {
+            $('#thread').prepend('<li>Someone has joined the server<br>Server</li><br>');
          });
 
          // prevents form from submitting and sends a message to server

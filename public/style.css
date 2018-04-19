@@ -24,6 +24,6 @@ li:nth-child(odd) {
 	width:500px;
 	height:400px;
 	background:gray;
-	position:fixed;
+	position:absolute;
 	z-index:1;
 }

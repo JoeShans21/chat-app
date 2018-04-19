@@ -6,7 +6,7 @@
 
          // listener for 'thread' event, which updates messages
          socket.on('thread', function(data, user) {
-            $('#thread').append('<li>' + data + '<br>' + user + '</li>');
+            $('#thread').prepend('<li>' + data + '<br>' + user + '</li>');
          });
 
          // prevents form from submitting and sends a message to server

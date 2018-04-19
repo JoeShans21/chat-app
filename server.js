@@ -21,9 +21,9 @@ app.use(express.static('public'));
 io.on('connection', function(client) {
 	console.log('Client connected...');
   connection.connect();
-  connection.query('SELECT content, author WHERE id=1', function (content, author) {
-    client.emit("thread", content, author);
-    client.broadcast.emit("thread", content, author);
+  connection.query('SELECT content WHERE id=1', function (content) {
+    client.emit("thread", content, "joeshans21");
+    client.broadcast.emit("thread", content, "joeshans21");
   });
   connection.end();
 	client.on('join', function(data) {

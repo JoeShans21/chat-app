@@ -22,9 +22,9 @@
          });
          function showModal(){
             swal({
-              title: "<i>Title</i>", 
-              content: "Testno  sporocilo za objekt: <b>test</b>",  
-              button: "V <u>redu</u>", 
+              title: "title", 
+              content: "hello",  
+              button: "exit", 
             });
          }
          function reset() {

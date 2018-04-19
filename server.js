@@ -19,6 +19,11 @@ app.use(express.static('public'));
 
 
 io.on('connection', function(client) {
+	var id="1"
+	connection.query('SELECT * FROM messages WHERE id="'+id+'"', function(rows){
+		console.log(rows);
+	});
+	connection.end();
 	console.log('Client connected...');
 	client.on('join', function(data) {
 		console.log(data);
@@ -26,6 +31,7 @@ io.on('connection', function(client) {
 
 	client.on('messages', function(data, user){
 		connection.query('INSERT INTO messages (content,author) VALUES ("'+data+'", "'+user+'");');
+		connection.end();
 		client.emit('thread', data, user);
 		client.broadcast.emit('thread', data, user);
 	});

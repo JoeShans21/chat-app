@@ -21,7 +21,7 @@
             return false;
          });
          function showModal(){
-            document.getElementById("usermodal").style.display="inline";
+            swal("Hello")
          }
          function reset() {
             document.getElementById('message').value="";

@@ -19,6 +19,7 @@ app.use(express.static('public'));
 
 
 io.on('connection', function(client) {
+	client.broadcast.emit('newuser');
 	connection.query('SELECT * FROM messages', function(err, rows){
 		for (let value of rows){
 			client.emit('thread', value.content, value.author);

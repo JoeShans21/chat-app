@@ -22,8 +22,7 @@ io.on('connection', function(client) {
 	console.log('Client connected...');
   connection.connect();
   connection.query('SELECT content WHERE id=1', function (content) {
-    client.emit("thread", content, "joeshans21");
-    client.broadcast.emit("thread", content, "joeshans21");
+    console.log(content)
   });
   connection.end();
 	client.on('join', function(data) {

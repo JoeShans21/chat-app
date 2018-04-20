@@ -19,13 +19,13 @@ app.use(express.static('public'));
 
 
 io.on('connection', function(client) {
-   client.on('getmessages', function(){
-	   connection.query('SELECT * FROM messages', function(err, rows){
-		   for (let value of rows){
-			   client.emit('thread', value.content, value.author);
-		   }
-	   });
-   });
+	client.on('getmessages', function(){
+		connection.query('SELECT * FROM messages', function(err, rows){
+			for (let value of rows){
+				client.emit('thread', value.content, value.author);
+			}
+		});
+	});
 	console.log('Client connected...');
 	client.on('join', function(data) {
 		console.log(data);

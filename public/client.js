@@ -21,7 +21,7 @@ $('#send').submit(function(){
 });
 function showModal(){
   swal({
-    title: "<i>Title</i>", 
+    title: "Enter a Username", 
     html: "<input type='text' value='hello' id='enter_user'>",  
     confirmButtonText: "Confirm", 
   }).then((result) => {

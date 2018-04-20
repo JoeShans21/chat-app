@@ -22,10 +22,11 @@ $('#send').submit(function(){
 function showModal(){
   swal({
     title: "<i>Title</i>", 
-    html: "<form></form>",  
+    html: "<form><input type='text' id='enter_user'></form>",  
     confirmButtonText: "Confirm", 
   }).then((result) => {
-    console.log("alert exited")
+    var user=document.getElementById("enter_user").value
+    console.log(user)
   })               
 }
 function reset() {

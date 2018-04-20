@@ -26,7 +26,7 @@ function showModal(){
     confirmButtonText: "Confirm", 
   }).then((result) => {
     var user=document.getElementById("enter_user").value
-    if (user=""){
+    if (user==""){
       swal('You didn\'t enter a username').then((result) => {
         showModal();
       })

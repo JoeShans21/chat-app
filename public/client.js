@@ -23,8 +23,10 @@ function showModal(){
   swal({
     title: "<i>Title</i>", 
     html: "<form></form>",  
-    confirmButtonText: "V <u>redu</u>", 
-  });
+    confirmButtonText: "Confirm", 
+  }).then((result) => {
+    console.log("alert exited")
+  })               
 }
 function reset() {
   document.getElementById('message').value="";

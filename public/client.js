@@ -26,7 +26,14 @@ function showModal(){
     confirmButtonText: "Confirm", 
   }).then((result) => {
     var user=document.getElementById("enter_user").value
-    console.log(user)
+    if (user=""){
+      swal('You didn\'t enter a username').then((result) => {
+        showModal();
+      })
+    }
+    else {
+      document.getElementById("username").value=user;
+    }
   })               
 }
 function reset() {

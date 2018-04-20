@@ -8,7 +8,7 @@ socket.on('connect', function(data) {
 socket.on('thread', function(data, user) {
   $('#thread').prepend('<li>' + data + '<br>' + user + '</li><br>');
 });
-socket.on('newuser', function(username) {
+socket.on('newuserserver', function(username) {
   $('#thread').prepend('<li>'+username+' has joined the server<br>Server</li><br>');
 });
 // prevents form from submitting and sends a message to server

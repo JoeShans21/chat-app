@@ -22,7 +22,7 @@ $('#send').submit(function(){
 function showModal(){
   swal({
     title: "<i>Title</i>", 
-    html: "<input type='text' value='hello'>",  
+    html: "<input type='text' value='hello' id='enter_user'>",  
     confirmButtonText: "Confirm", 
   }).then((result) => {
     var user=document.getElementById("enter_user").value

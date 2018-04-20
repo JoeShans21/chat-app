@@ -28,6 +28,10 @@ io.on('connection', function(client) {
 	client.on('join', function(data) {
 		console.log(data);
 	});
+	
+	client.on('newuser', function(username){
+		client.broadcast.emit('newuser', username)
+	});
 
 	client.on('messages', function(data, user){
 		connection.query('INSERT INTO messages (content,author) VALUES ("'+data+'", "'+user+'");');

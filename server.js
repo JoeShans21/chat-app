@@ -4,10 +4,10 @@ var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-  host: 'sql9.freemysqlhosting.net',
-  user: 'sql9233631',
-  password: 'nBNPW6SRwc',
-  database: 'sql9233631'
+	host: 'sql9.freemysqlhosting.net',
+	user: 'sql9233631',
+	password: 'nBNPW6SRwc',
+	database: 'sql9233631'
 });
 
 
@@ -19,7 +19,7 @@ app.use(express.static('public'));
 
 
 io.on('connection', function(client) {
-   client.on(‘getmessages’, function(){
+   client.on('getmessages', function(){
 	   connection.query('SELECT * FROM messages', function(err, rows){
 		   for (let value of rows){
 			   client.emit('thread', value.content, value.author);
@@ -32,7 +32,7 @@ io.on('connection', function(client) {
 	});
 	
 	client.on('newuser', function(username){
-		client.broadcast.emit('newuserserver', username)
+		client.broadcast.emit('newuserserver', username);
 	});
 
 	client.on('messages', function(data, user){

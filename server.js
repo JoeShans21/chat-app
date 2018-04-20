@@ -30,7 +30,7 @@ io.on('connection', function(client) {
 	});
 	
 	client.on('newuser', function(username){
-		client.broadcast.emit('newuser', username)
+		client.broadcast.emit('newuserserver', username)
 	});
 
 	client.on('messages', function(data, user){

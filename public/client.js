@@ -1,7 +1,7 @@
 // initializing socket, connection to server
 var socket = io.connect('https://joes-chat-app.herokuapp.com/');
 socket.on('connect', function(data) {
-            
+
 });
 
 // listener for 'thread' event, which updates messages
@@ -15,15 +15,21 @@ socket.on('newuserserver', function(username) {
 $('#send').submit(function(){
   var user = $('#username').val();
   var message = $('#message').val();
-  socket.emit('messages', message, user);
-  reset();
-  return false;
+  if (message!==""){
+    socket.emit('messages', message, user);
+    reset();
+    return false;
+  }
+  else {
+    swal('fuck you');
+    reset();
+  }
 });
 function showModal(){
   swal({
-    title: "Enter a Username", 
-    html: "<input type='text' placeholder='Username' id='enter_user'>",  
-    confirmButtonText: "Confirm", 
+    title: "Enter a Username",
+    html: "<input type='text' placeholder='Username' id='enter_user'>",
+    confirmButtonText: "Confirm",
   }).then((result) => {
     var user=document.getElementById("enter_user").value
     if (user==""){
@@ -35,7 +41,7 @@ function showModal(){
       document.getElementById("username").value=user;
       socket.emit('newuser', user);
     }
-  })               
+  })
 }
 function reset() {
   document.getElementById('message').value="";

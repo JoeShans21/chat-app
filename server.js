@@ -26,11 +26,11 @@ io.on('connection', function(client) {
 			}
 		});
 	});
-	console.log('Client connected...');
+	console.log('Client connected..');
 	client.on('join', function(data) {
 		console.log(data);
 	});
-	
+
 	client.on('newuser', function(username){
 		client.broadcast.emit('newuserserver', username);
 	});

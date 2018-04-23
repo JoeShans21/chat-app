@@ -49,5 +49,5 @@ function reset() {
 $( document ).ready(function() {
   showModal();
   console.log('hello');
-  setTimeout(function(){ socket.emit('getmessages'); }, 3000);
+  socket.emit('getmessages');
 });

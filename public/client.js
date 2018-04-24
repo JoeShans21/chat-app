@@ -15,7 +15,7 @@ socket.on('newuserserver', function(username) {
 $('#send').submit(function(){
   var user = $('#username').val();
   var message = $('#message').val();
-  if (message!==""){
+  if (message!=="" && message.length<100){
     socket.emit('messages', message, user);
     reset();
     return false;

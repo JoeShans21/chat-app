@@ -27,8 +27,20 @@ io.on('connection', function(client) {
 			}
 		});
 	});
-	client.on('join', function(data) {
-		console.log(data);
+	client.on('signup', function(first, last, email, user, pass) {
+		connection.query('INSERT INTO users (u_first,u_last,u_email,u_username,u_password) VALUES ("'+first+'", "'+last+'", "'+email+'", "'+user+'", "'+pass+'");');
+	});
+
+	client.on('signin', function(user, pass){
+		connection.query('SELECT * FROM users WHERE u_username="'+user+'"', function(err, rows){
+			var password=rows[0].u_password;
+			if (pass==password){
+				client.emit('signupsendback', true)
+			}
+			else {
+				client.emit('signupsendback', false)
+			}
+		});
 	});
 
 	client.on('newuser', function(username){
@@ -39,14 +51,8 @@ io.on('connection', function(client) {
 		connection.query('INSERT INTO messages (content,author) VALUES ("'+data+'", "'+user+'");');
 		client.emit('thread', data, user);
 		client.broadcast.emit('thread', data, user);
-		console.log('someone recieved messages')
+		console.log('someone recieved messages');
 	});
 });
-var reqTimer = setTimeout(function wakeUp() {
-   request("https://joes-cool-chat-app.herokuapp.com/", function() {
-      console.log("WAKE UP DYNO");
-   });
-   return reqTimer = setTimeout(wakeUp, 1200000);
-}, 12000);
 
-server.listen(process.env.PORT || 3000);
+server.listen(5000, '127.0.0.1');

@@ -22,7 +22,6 @@ $('#send').submit(function(){
   }
   else {
     swal('fuck you');
-    reset();
   }
 });
 function showModal(){

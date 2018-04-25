@@ -38,7 +38,7 @@ function showModal(){
       })
     }
     else {
-      socket.emit('signin', user, pass)
+      document.write(user);
     }
   })
 }

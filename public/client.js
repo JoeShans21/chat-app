@@ -1,5 +1,5 @@
 // initializing socket, connection to server
-var socket = io.connect('localhost:5000');
+var socket = io.connect('https://joes-cool-chat-app.herokuapp.com/');
 socket.on('connect', function(data) {
 
 });

@@ -12,10 +12,12 @@
         <h1>Joe's Chat App</h1>
         <footer style="width:100%;">
             <center>
-              <input id="username" type="text" style="display:none;">
-              <input id="message" type="text" placeholder="Message">
-              <br>
-              <button onclick='submit()' style="text-align:center; margin-top:10px; width:100px; height:40px;" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span> Send</button>
+              <div id="send">
+                <input id="username" type="text" style="display:none;">
+                <input id="message" type="text" placeholder="Message">
+                <br>
+                <button onclick='submit()' style="text-align:center; margin-top:10px; width:100px; height:40px;" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span> Send</button>
+              </div>
             </center>
         </footer>
         <ul id="thread"></ul>

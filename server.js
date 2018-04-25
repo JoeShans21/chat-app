@@ -42,7 +42,7 @@ io.on('connection', function(client) {
 		console.log('someone recieved messages')
 	});
 	client.on('hello', function(){
-		console.log('hi')
+		console.log("WHAT THE HELL");
 	});
 });
 var reqTimer = setTimeout(function wakeUp() {

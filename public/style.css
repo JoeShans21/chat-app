@@ -13,9 +13,9 @@ form {
 }
 li {
 	list-style: none;
-	width: 100vw;
+	width: 80vw;
 }
 
-li:nth-child(odd) { 
-	background: #eee; 
+li:nth-child(odd) {
+	background: #eee;
 }

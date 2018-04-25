@@ -11,8 +11,8 @@ socket.on('thread', function(data, user) {
 socket.on('newuserserver', function(username) {
   $('#thread').prepend('<li>'+username+' has joined the server<br>Server</li><br>');
 });
-socket.on('signinsendback', function(){
-  console.log('shit worked');
+socket.on('wassup', function(thing){
+  $('#thread').prepend('<li>'+thing+'<br>Server</li><br>');
 });
 // prevents form from submitting and sends a message to server
 function submit(){
@@ -41,7 +41,7 @@ function showModal(){
       })
     }
     else {
-      socket.emit('test');
+      socket.emit('hello');
       document.getElementById("username").value=user;
     }
   })

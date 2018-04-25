@@ -40,7 +40,7 @@ io.on('connection', function(client) {
 		client.emit('thread', data, user);
 		client.broadcast.emit('thread', data, user);
 	});
-	client.on('signin', function(user, pass){
+	client.on('test', function(user){
 		console.log(user);
 	});
 });

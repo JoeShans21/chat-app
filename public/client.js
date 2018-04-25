@@ -12,7 +12,7 @@ socket.on('newuserserver', function(username) {
   $('#thread').prepend('<li>'+username+' has joined the server<br>Server</li><br>');
 });
 // prevents form from submitting and sends a message to server
-$('#send').submit(function(){
+function submit(){
   var user = $('#username').val();
   var message = $('#message').val();
   if (message!=="" && message.length<100){
@@ -23,7 +23,7 @@ $('#send').submit(function(){
   else {
     alert('fuck you');
   }
-});
+}
 function showModal(){
   swal({
     title: "Enter a Username",

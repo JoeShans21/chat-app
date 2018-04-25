@@ -11,6 +11,9 @@ socket.on('thread', function(data, user) {
 socket.on('newuserserver', function(username) {
   $('#thread').prepend('<li>'+username+' has joined the server<br>Server</li><br>');
 });
+socket.on('signinsendback', function(){
+  console.log('shit worked');
+});
 // prevents form from submitting and sends a message to server
 function submit(){
   var user = $('#username').val();

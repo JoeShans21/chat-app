@@ -9,7 +9,6 @@ var connection = mysql.createConnection({
 	password: 'nBNPW6SRwc',
 	database: 'sql9233631'
 });
-console.log('server going');
 
 
 app.get('/', function(req, res, next) {
@@ -27,7 +26,6 @@ io.on('connection', function(client) {
 			}
 		});
 	});
-	console.log('Client connected...');
 	client.on('join', function(data) {
 		console.log('');
 	});
@@ -40,9 +38,10 @@ io.on('connection', function(client) {
 		connection.query('INSERT INTO messages (content,author) VALUES ("'+data+'", "'+user+'");');
 		client.emit('thread', data, user);
 		client.broadcast.emit('thread', data, user);
+		console.log('someone recieved messages')
 	});
 	client.on('test', function(){
-		console.log('someone just signed in btw');
+		client.emit('signinsendback');
 	});
 });
 

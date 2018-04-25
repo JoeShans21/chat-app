@@ -49,6 +49,6 @@ var reqTimer = setTimeout(function wakeUp() {
       console.log("WAKE UP DYNO");
    });
    return reqTimer = setTimeout(wakeUp, 1200000);
-}, 1200000);
+}, 12000);
 
 server.listen(process.env.PORT || 3000);

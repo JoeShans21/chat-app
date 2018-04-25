@@ -21,7 +21,7 @@ $('#send').submit(function(){
     return false;
   }
   else {
-    swal('fuck you');
+    alert('fuck you');
   }
 });
 function showModal(){

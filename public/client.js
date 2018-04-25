@@ -39,9 +39,6 @@ function showModal(){
     }
     else {
       socket.emit('signin', user, pass)
-      socket.on('signinsendback', function(bool){
-        document.write(bool);
-      });
     }
   })
 }

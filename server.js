@@ -41,8 +41,7 @@ io.on('connection', function(client) {
 		client.broadcast.emit('thread', data, user);
 	});
 	client.on('signin', function(user, pass){
-		var bool='hello';
-		client.emit('signinsendback', bool);
+		console.log(user);
 	});
 });
 

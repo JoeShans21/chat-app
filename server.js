@@ -40,10 +40,8 @@ io.on('connection', function(client) {
 		client.emit('thread', data, user);
 		client.broadcast.emit('thread', data, user);
 	});
-	client.on('signin', function(arr){
-		var user=arr[0];
-		var pass=arr[1];
-		var bool=false;
+	client.on('signin', function(user, pass){
+		var bool='hello';
 		client.emit('signinsendback', bool);
 	});
 });

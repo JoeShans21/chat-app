@@ -38,17 +38,9 @@ function showModal(){
       })
     }
     else {
-      var arr=[user, pass];
-      socket.emit('signin', arr)
+      socket.emit('signin', user, pass)
       socket.on('signinsendback', function(bool){
-        if (bool){
-          socket.emit('newuser', user);
-          document.getElementById('username').value=user;
-        }
-        else{
-          swal('Username or Password is incorrect');
-          showModal();
-        }
+        document.write(bool);
       });
     }
   })

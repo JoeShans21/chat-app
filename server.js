@@ -28,7 +28,7 @@ io.on('connection', function(client) {
 		});
 	});
 	client.on('join', function(data) {
-		console.log('');
+		console.log(data);
 	});
 
 	client.on('newuser', function(username){
@@ -40,11 +40,6 @@ io.on('connection', function(client) {
 		client.emit('thread', data, user);
 		client.broadcast.emit('thread', data, user);
 		console.log('someone recieved messages')
-	});
-	client.on('hello', function(){
-		request("https://joes-cool-chat-app.herokuapp.com/", function() {
-       console.log("hello");
-    });
 	});
 });
 var reqTimer = setTimeout(function wakeUp() {

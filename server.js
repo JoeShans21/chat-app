@@ -40,8 +40,8 @@ io.on('connection', function(client) {
 		client.broadcast.emit('thread', data, user);
 		console.log('someone recieved messages')
 	});
-	client.on('hello', function(){
-		client.emit('wassup', 'gkdnrjeg');
+	client.on('hello', function(thing){
+		client.emit('wassup', thing);
 	});
 });
 

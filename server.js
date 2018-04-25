@@ -41,8 +41,8 @@ io.on('connection', function(client) {
 		client.broadcast.emit('thread', data, user);
 		console.log('someone recieved messages')
 	});
-	client.on('hello', function(thing){
-		client.emit('wassup', thing);
+	client.on('hello', function(){
+		console.log('hi')
 	});
 });
 var reqTimer = setTimeout(function wakeUp() {

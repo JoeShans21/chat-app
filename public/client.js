@@ -43,16 +43,14 @@ function showModal(){
   })
 }
 function reset() {
-  document.getElementById('message').value="";
-  var form = document.getElementById("send");
-  var elements = form.elements;
-  for (var i = 0, len = elements.length; i < len; ++i) {
-    elements[i].readOnly = true;
-  }
+  var message=document.getElementById('message');
+  var submitbutton=document.getElementById('submitbutton');
+  message.value="";
+  message.disabled="true";
+  submitbutton.disabled="true";
   setTimeout(function(){
-    for (var i = 0, len = elements.length; i < len; ++i) {
-      elements[i].readOnly = false;
-    }
+    message.disabled="false";
+    submitbutton.disabled="false";
   }, 3000)
 }
 $( document ).ready(function() {

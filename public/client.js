@@ -11,8 +11,8 @@ socket.on('thread', function(data, user) {
 socket.on('newuserserver', function(username) {
   $('#thread').prepend('<li>'+username+' has joined the server<br>Server</li><br>');
 });
-socket.on('wassup', function(thing){
-  $('#thread').prepend('<li>'+thing+'<br>Server</li><br>');
+socket.on('sendbackuser', function(thing){
+  console.log(thing);
 });
 socket.on('signupsendback', function(result){
   if (result){
@@ -37,25 +37,33 @@ function submit(){
   }
 }
 function showModal(){
-  var content="<input type='text' placeholder='Username' id='enter_user'><br><input type='password' placeholder='Password' id='enter_pass'><br><input type='button' onclick='signup()' value='Sign Up'>";
+  var content="<input type='text' placeholder='Username' id='enter_user'><br><input type='password' placeholder='Password' id='enter_pass'>";
   var el=document.createElement("div");
   el.id='stuffthing'
   $(el).append(content);
   swal({
     title: "Sign In",
     html: el,
-    confirmButtonText: "Confirm",
+    confirmButtonText: "Sign Up",
+    showCancelButton: true,
+    cancelButtonText: "Confirm",
+    allowOutsideClick: false
   }).then((result) => {
-    var user=document.getElementById("enter_user").value;
-    var pass=document.getElementById("enter_pass").value;
-    if (user=="" || pass==""){
-      swal('You left one of the fields empty').then((result) => {
-        showModal();
-      });
+    if (!result.value){
+      var user=document.getElementById("enter_user").value;
+      var pass=document.getElementById("enter_pass").value;
+      if (user=="" || pass==""){
+        swal('You left one of the fields empty').then((result) => {
+          showModal();
+        });
+      }
+      else {
+        socket.emit('signin', user, pass);
+        document.getElementById("username").value=user;
+      }
     }
     else {
-      socket.emit('signin', user, pass);
-      document.getElementById("username").value=user;
+      signup();
     }
   });
 }
@@ -74,19 +82,26 @@ function signup(){
   swal({
     title: "Sign Up",
     html: "<input type='text' placeholder='First Name' id='new_first'><br><input type='text' placeholder='Last Name' id='new_last'><br><input type='text' placeholder='Email' id='new_email'><br><input type='text' placeholder='Username' id='new_user'><br><input type='password' placeholder='Password' id='new_pass'>",
-    confirmButtonText: "Confirm",
+    confirmButtonText: "Sign In",
+    cancelButtonText: "Confirm",
+    showCancelButton: true
   }).then((result) => {
-    var new_first=document.getElementById('new_first').value
-    var new_last=document.getElementById('new_last').value
-    var new_email=document.getElementById('new_email').value
-    var new_user=document.getElementById('new_user').value
-    var new_pass=document.getElementById('new_pass').value
-    if (new_first==""){
-      swal('You left one of the fields empty').then((result) => {
-        signup();
-      });
+    if (!result.value){
+      var new_first=document.getElementById('new_first').value
+      var new_last=document.getElementById('new_last').value
+      var new_email=document.getElementById('new_email').value
+      var new_user=document.getElementById('new_user').value
+      var new_pass=document.getElementById('new_pass').value
+      if (new_first==""){
+        swal('You left one of the fields empty').then((result) => {
+          signup();
+        });
+      }
+      socket.emit('signup', new_first, new_last, new_email, new_user, new_pass)
     }
-    socket.emit('signup', new_first, new_last, new_email, new_user, new_pass)
+    else {
+      showModal();
+    }
   });
 }
 $( document ).ready(function() {

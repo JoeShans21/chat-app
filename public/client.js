@@ -39,6 +39,7 @@ function showModal(){
     }
     else {
       document.write(user);
+      document.write(pass);
     }
   })
 }

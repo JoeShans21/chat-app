@@ -9,6 +9,7 @@ var connection = mysql.createConnection({
 	password: 'nBNPW6SRwc',
 	database: 'sql9233631'
 });
+console.log('server going');
 
 
 app.get('/', function(req, res, next) {

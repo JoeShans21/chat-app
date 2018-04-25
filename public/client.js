@@ -51,7 +51,7 @@ function reset() {
   setTimeout(function(){
     message.disabled=false;
     submitbutton.disabled=false;
-  }, 3000)
+  }, 10000)
 }
 $( document ).ready(function() {
   showModal();

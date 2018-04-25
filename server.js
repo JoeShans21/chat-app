@@ -3,6 +3,7 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 var mysql = require('mysql');
+var request = require('request');
 var connection = mysql.createConnection({
 	host: 'sql9.freemysqlhosting.net',
 	user: 'sql9233631',

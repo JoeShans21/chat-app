@@ -45,7 +45,7 @@ io.on('connection', function(client) {
 	});
 });
 var reqTimer = setTimeout(function wakeUp() {
-   request("https://nameless-gorge-19527.herokuapp.com", function() {
+   request("https://joes-cool-chat-app.herokuapp.com/", function() {
       console.log("WAKE UP DYNO");
    });
    return reqTimer = setTimeout(wakeUp, 1200000);

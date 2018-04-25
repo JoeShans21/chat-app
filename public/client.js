@@ -1,7 +1,7 @@
 // initializing socket, connection to server
 var socket = io.connect('https://joes-chat-app.herokuapp.com/');
 socket.on('connect', function(data) {
-
+  socket.emit('join', 'thing')
 });
 
 // listener for 'thread' event, which updates messages

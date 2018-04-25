@@ -49,6 +49,11 @@ function reset() {
   for (var i = 0, len = elements.length; i < len; ++i) {
     elements[i].readOnly = true;
   }
+  setTimeout(function(){
+    for (var i = 0, len = elements.length; i < len; ++i) {
+      elements[i].readOnly = false;
+    }
+  }, 3000)
 }
 $( document ).ready(function() {
   showModal();

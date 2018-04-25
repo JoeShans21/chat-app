@@ -38,7 +38,7 @@ function showModal(){
       })
     }
     else {
-      socket.emit('test';
+      socket.emit('test');
     }
   })
 }

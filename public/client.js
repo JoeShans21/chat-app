@@ -49,8 +49,8 @@ function reset() {
   message.disabled="true";
   submitbutton.disabled="true";
   setTimeout(function(){
-    message.disabled="false";
-    submitbutton.disabled="false";
+    message.disabled=false;
+    submitbutton.disabled=false;
   }, 3000)
 }
 $( document ).ready(function() {

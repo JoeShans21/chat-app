@@ -40,6 +40,12 @@ io.on('connection', function(client) {
 		client.emit('thread', data, user);
 		client.broadcast.emit('thread', data, user);
 	});
+	client.on('signin', function(arr){
+		var user=arr[0];
+		var pass=arr[1];
+		var bool=false;
+		client.emit('signinsendback', bool);
+	});
 });
 
 server.listen(process.env.PORT || 3000);

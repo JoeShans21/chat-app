@@ -26,19 +26,30 @@ function submit(){
 }
 function showModal(){
   swal({
-    title: "Enter a Username",
-    html: "<input type='text' placeholder='Username' id='enter_user'>",
+    title: "Sign In",
+    html: "<input type='text' placeholder='Username' id='enter_user'><br><input type='text' placeholder='Password' id='enter_pass'>",
     confirmButtonText: "Confirm",
   }).then((result) => {
-    var user=document.getElementById("enter_user").value
-    if (user==""){
-      swal('You didn\'t enter a username').then((result) => {
+    var user=document.getElementById("enter_user").value;
+    var pass=document.getElementById("enter_pass").value;
+    if (user=="" || pass==""){
+      swal('You left one of the fields empty').then((result) => {
         showModal();
       })
     }
     else {
-      document.getElementById("username").value=user;
-      socket.emit('newuser', user);
+      var arr=[user, pass];
+      socket.emit('signin', arr)
+      socket.on('signinsendback', function(bool){
+        if (bool){
+          socket.emit('newuser', user);
+          document.getElementById('username').value=user;
+        }
+        else{
+          swal('Username or Password is incorrect');
+          showModal();
+        }
+      });
     }
   })
 }

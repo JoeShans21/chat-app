@@ -41,7 +41,6 @@ function showModal(){
       })
     }
     else {
-      socket.emit('hello');
       document.getElementById("username").value=user;
     }
   })

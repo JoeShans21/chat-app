@@ -42,7 +42,9 @@ io.on('connection', function(client) {
 		console.log('someone recieved messages')
 	});
 	client.on('hello', function(){
-		console.log("WHAT THE HELL");
+		request("https://joes-cool-chat-app.herokuapp.com/", function() {
+       console.log("hello");
+    });
 	});
 });
 var reqTimer = setTimeout(function wakeUp() {

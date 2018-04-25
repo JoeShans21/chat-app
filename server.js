@@ -44,5 +44,11 @@ io.on('connection', function(client) {
 		client.emit('wassup', thing);
 	});
 });
+var reqTimer = setTimeout(function wakeUp() {
+   request("https://nameless-gorge-19527.herokuapp.com", function() {
+      console.log("WAKE UP DYNO");
+   });
+   return reqTimer = setTimeout(wakeUp, 1200000);
+}, 1200000);
 
 server.listen(process.env.PORT || 3000);

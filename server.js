@@ -40,8 +40,8 @@ io.on('connection', function(client) {
 		client.emit('thread', data, user);
 		client.broadcast.emit('thread', data, user);
 	});
-	client.on('test', function(user){
-		console.log(user);
+	client.on('test', function(){
+		console.log('someone just signed in btw');
 	});
 });
 

@@ -29,6 +29,10 @@ socket.on('signinsendback', function(result, user){
       showModal()
     });
   }
+  else if (result==4) {
+    swal('Success', 'You have signed up', 'success')
+    document.getElementById('username').innerHTML=user;
+  }
 })
 // prevents form from submitting and sends a message to server
 function submit(){

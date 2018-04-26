@@ -59,7 +59,7 @@ function showModal(){
       }
       else {
         socket.emit('signin', user, pass);
-        document.getElementById("username").value=user;
+        socket.emit('newuser', user);
       }
     }
     else {

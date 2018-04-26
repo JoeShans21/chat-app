@@ -43,13 +43,20 @@ io.on('connection', function(client) {
 
 	client.on('signin', function(user, pass){
 		connection.query('SELECT * FROM users WHERE u_username="'+user+'"', function(err, rows){
-			var hashedPassword=rows[0].u_password;
-			var result=passwordHash.verify(pass, hashedPassword)
-			if (result){
-				client.emit('signupsendback', true)
+			try {
+				var hashedPassword=rows[0].u_password;
+				var result=passwordHash.verify(pass, hashedPassword)
+				if (result){
+					client.emit('signupsendback', 1)
+				}
+				else {
+					client.emit('signupsendback', 2)
+				}
 			}
-			else {
-				client.emit('signupsendback', false)
+			catch (err){
+				if (err="TypeError: Cannot read property 'u_password' of undefined"){
+					client.emit('signupsendback', 3)
+				}
 			}
 		});
 	});

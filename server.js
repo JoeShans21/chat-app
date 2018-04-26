@@ -32,6 +32,9 @@ io.on('connection', function(client) {
 	client.on('getmessages', function(){
 		connection.query('SELECT * FROM messages', function(err, rows){
 			for (let value of rows){
+				var out = value.content
+				out=out.replace('<', '&lt;')
+				out=out.replace('>', '&gt;')
 				client.emit('thread', value.content, value.author);
 			}
 		});

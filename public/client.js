@@ -99,8 +99,8 @@ function signup(){
     confirmButtonText: "Sign In",
     cancelButtonText: "Confirm",
     showCancelButton: true,
-    cancelButtonColor: blue,
-    confirmButtonColor: gray
+    cancelButtonColor: '#0000ff',
+    confirmButtonColor: '#d3d3d3'
   }).then((result) => {
     if (!result.value){
       var new_first=document.getElementById('new_first').value

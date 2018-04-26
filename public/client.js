@@ -17,7 +17,7 @@ socket.on('sendbackuser', function(thing){
 socket.on('signupsendback', function(result){
   if (result==1){
     swal('Success', 'You have signed in', 'success')
-    document.getElementById('username').value=document.getElementById('enter_user').value
+    document.getElementById('username').innerHTML='signed in';
   }
   else if (result==2) {
     swal('Error', 'Username and password do not match', 'error').then((result) => {

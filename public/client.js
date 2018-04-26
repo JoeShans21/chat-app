@@ -36,7 +36,8 @@ socket.on('signinsendback', function(result, user){
 })
 // prevents form from submitting and sends a message to server
 function submit(){
-  var user = document.getElementById('username');
+  var user = document.getElementById('username').innerHTML;
+  console.log(user);
   var message = $('#message').val();
   if (message!=="" && message.length<100){
     socket.emit('messages', message, user);

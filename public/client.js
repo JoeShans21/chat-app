@@ -98,7 +98,9 @@ function signup(){
     html: "<input type='text' placeholder='First Name' id='new_first'><br><input type='text' placeholder='Last Name' id='new_last'><br><input type='text' placeholder='Email' id='new_email'><br><input type='text' placeholder='Username' id='new_user'><br><input type='password' placeholder='Password' id='new_pass'>",
     confirmButtonText: "Sign In",
     cancelButtonText: "Confirm",
-    showCancelButton: true
+    showCancelButton: true,
+    cancelButtonColor: blue,
+    confirmButtonColor: gray
   }).then((result) => {
     if (!result.value){
       var new_first=document.getElementById('new_first').value

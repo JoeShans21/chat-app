@@ -12,9 +12,9 @@ var request = require('request');
 var passwordHash = require('password-hash');
 var connection = mysql.createConnection({
 	host: 'sql9.freemysqlhosting.net',
-	user: 'sql9233631',
-	password: 'nBNPW6SRwc',
-	database: 'sql9233631'
+	user: 'sql9234830',
+	password: 'V4TnCAlhGb',
+	database: 'sql9234830'
 });
 
 

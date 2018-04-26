@@ -20,12 +20,14 @@ socket.on('signupsendback', function(result){
     document.getElementById('username').value=document.getElementById('enter_user').value
   }
   else if (result==2) {
-    swal('Error', 'Username and password do not match', 'error')
-    showModal()
+    swal('Error', 'Username and password do not match', 'error').then((result) => {
+      showModal()
+    });
   }
   else if (result==3) {
-    swal('Error', 'Username does not exist', 'error')
-    showModal()
+    swal('Error', 'Username does not exist', 'error').then((result) => {
+      showModal()
+    });
   }
 })
 // prevents form from submitting and sends a message to server

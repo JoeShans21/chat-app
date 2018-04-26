@@ -61,7 +61,7 @@ function showModal(){
     cancelButtonText: "Confirm",
     allowOutsideClick: false,
     cancelButtonColor: '#0000ff',
-    confirmButtonColor: '#d3d3d3'
+    confirmButtonColor: '#a9a9a9'
   }).then((result) => {
     if (!result.value){
       var user=document.getElementById("enter_user").value;
@@ -100,7 +100,7 @@ function signup(){
     cancelButtonText: "Confirm",
     showCancelButton: true,
     cancelButtonColor: '#0000ff',
-    confirmButtonColor: '#d3d3d3'
+    confirmButtonColor: '#a9a9a9'
   }).then((result) => {
     if (!result.value){
       var new_first=document.getElementById('new_first').value

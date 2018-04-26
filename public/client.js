@@ -59,7 +59,9 @@ function showModal(){
     confirmButtonText: "Sign Up",
     showCancelButton: true,
     cancelButtonText: "Confirm",
-    allowOutsideClick: false
+    allowOutsideClick: false,
+    cancelButtonColor: blue,
+    confirmButtonColor: gray
   }).then((result) => {
     if (!result.value){
       var user=document.getElementById("enter_user").value;

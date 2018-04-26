@@ -14,7 +14,7 @@ socket.on('newuserserver', function(username) {
 socket.on('sendbackuser', function(thing){
   console.log(thing);
 });
-socket.on('signupsendback', function(result){
+socket.on('signinsendback', function(result){
   if (result==1){
     swal('Success', 'You have signed in', 'success')
     document.getElementById('username').innerHTML='signed in';

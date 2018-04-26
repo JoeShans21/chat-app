@@ -15,12 +15,15 @@ socket.on('sendbackuser', function(thing){
   console.log(thing);
 });
 socket.on('signupsendback', function(result){
-  if (result){
+  if (result==1){
     swal('Success', 'You have signed in', 'success')
     document.getElementById('username').value=document.getElementById('enter_user').value
   }
-  else {
-    swal('Success', 'Username and password do not match', 'error')
+  else if (result==2) {
+    swal('Error', 'Username and password do not match', 'error')
+  }
+  else if (result==3) {
+    swal('Error', 'Username does not exist', 'error')
   }
 })
 // prevents form from submitting and sends a message to server

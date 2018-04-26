@@ -21,9 +21,11 @@ socket.on('signupsendback', function(result){
   }
   else if (result==2) {
     swal('Error', 'Username and password do not match', 'error')
+    showModal()
   }
   else if (result==3) {
     swal('Error', 'Username does not exist', 'error')
+    showModal()
   }
 })
 // prevents form from submitting and sends a message to server

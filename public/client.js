@@ -6,7 +6,7 @@ socket.on('connect', function(data) {
 
 // listener for 'thread' event, which updates messages
 socket.on('thread', function(data, user) {
-  $('#thread').prepend('<li><code>' + data + '<br>' + user + '</code></li><br>');
+  $('#thread').prepend('<li><xmp>' + data + '</xmp><br><xmp>' + user + '</xmp></li><br>');
 });
 socket.on('newuserserver', function(username) {
   $('#thread').prepend('<li>'+username+' has joined the server<br>Server</li><br>');

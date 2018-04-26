@@ -50,15 +50,15 @@ io.on('connection', function(client) {
 				var hashedPassword=rows[0].u_password;
 				var result=passwordHash.verify(pass, hashedPassword)
 				if (result){
-					client.emit('signupsendback', 1)
+					client.emit('signinsendback', 1, user)
 				}
 				else {
-					client.emit('signupsendback', 2)
+					client.emit('signinsendback', 2, user)
 				}
 			}
 			catch (err){
 				if (err="TypeError: Cannot read property 'u_password' of undefined"){
-					client.emit('signupsendback', 3)
+					client.emit('signinsendback', 3, user)
 				}
 			}
 		});

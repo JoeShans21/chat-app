@@ -90,7 +90,7 @@ function reset() {
   setTimeout(function(){
     message.disabled=false;
     submitbutton.disabled=false;
-  }, 10000)
+  }, 5000)
 }
 function signup(){
   swal({

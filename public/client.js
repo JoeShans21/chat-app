@@ -25,7 +25,7 @@ socket.on('signinsendback', function(result, user){
     });
   }
   else if (result==3) {
-    swal('Error', 'Username does not exist', 'error').then((result) => {
+    swal('Error', user, 'error').then((result) => {
       showModal()
     });
   }

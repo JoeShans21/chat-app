@@ -58,11 +58,6 @@ io.on('connection', function(client) {
 					client.emit('signinsendback', 2, user)
 				}
 			}
-			catch (err){
-				if (err="TypeError: Cannot read property 'u_password' of undefined"){
-					client.emit('signinsendback', 3, err)
-				}
-			}
 		});
 	});
 

@@ -49,6 +49,7 @@ io.on('connection', function(client) {
 		connection.query('SELECT * FROM users WHERE u_username="'+user+'"', function(err, rows){
 			try {
 				var hashedPassword=rows[0].u_password;
+                debug.log(rows)
                 console.log("rows: " + rows)
 				var result=passwordHash.verify(pass, hashedPassword)
 				if (result){

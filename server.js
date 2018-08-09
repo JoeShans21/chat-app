@@ -12,9 +12,9 @@ var request = require('request');
 var passwordHash = require('password-hash');
 var connection = mysql.createConnection({
 	host: 'sql9.freemysqlhosting.net',
-	user: 'sql9234830',
-	password: 'V4TnCAlhGb',
-	database: 'sql9234830'
+	user: 'sql9251151',
+	password: 'w73z9SwvYP',
+	database: 'sql9251151'
 });
 
 
@@ -41,7 +41,7 @@ io.on('connection', function(client) {
 	});
 	client.on('signup', function(first, last, email, user, pass) {
 		var hashedPassword = passwordHash.generate(pass);
-		connection.query('INSERT INTO users (u_first,u_last,u_email,u_username,u_password) VALUES ("'+first+'", "'+last+'", "'+email+'", "'+user+'", "'+hashedPassword+'");');
+		connection.query('INSERT INTO chat_users (u_first,u_last,u_email,u_username,u_password) VALUES ("'+first+'", "'+last+'", "'+email+'", "'+user+'", "'+hashedPassword+'");');
 		client.emit('signinsendback', 4, user)
 	});
 

@@ -41,7 +41,7 @@ io.on('connection', function(client) {
 	});
 	client.on('signup', function(first, last, email, user, pass) {
 		var hashedPassword = passwordHash.generate(pass);
-		connection.query('INSERT INTO chat_users (u_first,u_last,u_email,u_username,u_password) VALUES ("'+first+'", "'+last+'", "'+email+'", "'+user+'", "'+pass+'");');
+		connection.query('INSERT INTO chat_users (u_first,u_last,u_email,u_username,u_password) VALUES ("'+first+'", "'+last+'", "'+email+'", "'+user+'", "'+hashedPassword+'");');
 		client.emit('signinsendback', 4, user)
 	});
 

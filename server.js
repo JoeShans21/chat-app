@@ -71,6 +71,7 @@ io.on('connection', function(client) {
 	});
 
 	client.on('messages', function(data, user){
+		console.log("someone is sending message")
 		connection.query('INSERT INTO messages (content,author) VALUES ("'+data+'", "'+user+'");');
 		client.emit('thread', data, user);
 		client.broadcast.emit('thread', data, user);

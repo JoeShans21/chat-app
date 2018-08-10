@@ -1,0 +1,23 @@
+html, body {
+  text-align: center;
+  font-family: 'Avenir Next', 'Helvetica', 'Arial', sans-serif;
+}
+
+html,body,li,form,ul {
+  padding: 0;
+  margin: 0;
+}
+
+form {
+	padding-bottom: 2%;
+}
+li {
+	list-style: none;
+	width: 80vw;
+  margin:0 auto;
+  word-wrap: break-word;
+}
+
+li:nth-child(odd) {
+	background: #eee;
+}

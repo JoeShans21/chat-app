@@ -29,9 +29,7 @@ app.use(express.static('public'));
 
 io.on('connection', function(client) {
 	console.log('Client Conected')
-	client.on('test', function(){
-		console.log("testeddddddddddddddddddddddddddddddddddddddddddd")
-	});
+	client.emit('test');
 	client.on('getmessages', function(){
 		connection.query('SELECT * FROM messages', function(err, rows){
 			for (let value of rows){
